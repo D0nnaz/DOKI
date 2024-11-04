@@ -1,0 +1,82 @@
+<div class="tabs">
+  <button class="tab active" data-tab="todo">To do</button>
+  <button class="tab" data-tab="done">Done</button>
+  <button class="add-btn" onclick="openAddPopup()">✢</button>
+</div>
+
+  <section class="top-container">
+    <div class="left-section">
+      <h1><span class="doki">DOKI</span></h1>
+      <h1>LIST</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="right-section">
+      <div class="item">
+        <div class="time">1:20 PM</div>
+        <div class="location">Midwoedoe</div>
+      </div>
+      <div class="item">
+        <div class="time">1:20 PM</div>
+        <div class="location">Biffa</div>
+      </div>
+    </div>
+  </section>
+
+<div class = "container">
+
+<section class="background">
+<div class="user-info">
+  <h2>Things with DOKI</h2>
+  <p>You have
+    <strong class="item-count" data-tab="todo">{{items.length}}</strong>
+    <span class="item-text">things to do.</span>
+  </p>
+</div>
+<ul id="todo-list" class="task-list">
+  {{#each items}}
+    {{#unless this.done}}
+      <li id="{{this._id}}" class="todo-card">
+        <button class="delete-btn" onclick="openDeletePopup('{{this._id}}')">⤫</button>
+        <span class="task-text">{{this.text}}</span>
+        <button class="mark-button mark-done" onclick="markAsDone('{{this._id}}')">Done</button>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+<ul id="done-list" class="task-list hidden">
+  {{#each items}}
+    {{#if this.done}}
+      <li id="{{this._id}}" class="todo-card"> 
+        <span class="task-text">{{this.text}}</span>
+        <button class="delete-btn" onclick="openDeletePopup('{{this._id}}')">⤫</button>
+         <button class="mark-button mark-revert" onclick="markAsNotDone('{{this._id}}')">Revert</button>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+
+</section>
+
+<div id="add-popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closeAddPopup()">⤫</span>
+    <h3>Voeg iets leuks toe!</h3>
+    <input type="text" id="new-task" placeholder="Iets leuks" />
+    <button onclick="addNewTask()">Toevoegen</button>
+  </div>
+</div>
+
+<div id="delete-popup" class="popup hidden">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closeDeletePopup()">⤫</span>
+    <h3 class = "heading-popup">Are you sure you want to delete this task?</h3>
+    <button onclick="confirmDelete()">Delete</button>
+    <button onclick="closeDeletePopup()">Cancel</button>
+  </div>
+</div>
+</div>

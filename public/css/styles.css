@@ -1,0 +1,345 @@
+/* . ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚GENERAL. ݁₊ ⊹ . ݁˖ . ݁༉‧₊˚. */
+:root {
+    --main-text-color: #333333;;
+    --white-background: #fff;
+    --secondary-text-color: #fff;
+    --incorrect-color: #DEA13B;
+    --correct-color: #487E3B;
+    --dark-color: #333333;
+    --header-height: 5.9em;
+    --small-header-height: 2.9em;
+}
+
+* {
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+} 
+
+html,
+body {
+    height: 100dvh;
+    height: calc(var(--vh, 1dvh) * 100);
+    background-color: #E5E6E1;
+}
+
+body {
+    color: var(--main-text-color);
+    padding: 2em 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.doki {
+    font-style: italic;
+    text-decoration: underline;
+  }
+  
+
+.tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 47px;
+    margin-bottom: 10px;
+    gap: 1em;
+}
+
+.tab,
+.add-btn {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5em;
+    background: none;
+}
+
+.add-btn {
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border:none;
+}
+
+.active{
+    background-color: var(--dark-color);
+    color: #E5E6E1;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 5em 0em;
+    justify-content: center
+
+
+  }
+
+  .left-section {
+    text-align: right;
+  }
+
+  .left-section h1 {
+    margin: 0;
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 0.6;
+    text-align: center;
+  }
+
+  .doki {
+    font-style: italic;
+    text-decoration: underline;
+  }
+
+  .divider {
+    width: 2px;
+    height: 100px;
+    background-color: #333;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .right-section .item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-section .time {
+    font-weight: bold;
+  }
+
+  .right-section .location {
+    font-weight: normal;
+    font-size: 0.8em;
+  }
+
+
+.background {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.user-info p {
+    color: #666;
+    font-size: 1em;
+    margin-top: 0;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    color: #333;
+    background-color: #f9f9f9;
+    max-width: 100%;
+}
+
+.task-text {
+    flex: 1 1 auto;
+    margin: 0 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+.mark-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 2em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: center;
+    white-space: nowrap;
+    margin-right: 1em;
+}
+
+
+.delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0.3em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card-yellow {
+    background-color: #D9B470;
+}
+
+.card-grey {
+    background-color: #A7B1B2;
+}
+
+.card-pink {
+    background-color: #C6A3A3;
+}
+
+.card-green {
+    background-color: #679A8E;
+}
+
+
+.mark-button.card-yellow {
+    background-color: #65461D;
+    color: #E4B875;
+}
+
+.mark-button.card-grey {
+    background-color: #333333;
+    color: #B0BBBC;
+}
+
+.mark-button.card-pink {
+    background-color: #5F2B2F;
+    color: #CB9CA3;
+}
+
+.mark-button.card-green {
+    background-color: #126965;
+    color: #9CCBC9;
+}
+
+
+
+
+
+
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden; 
+    justify-content: center;
+    align-items: center;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/panter.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.popup::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 2; 
+}
+
+    
+    .popup-content {
+        background: white;
+        width: 80%;
+        max-width: 500px;
+        position: relative;
+        z-index: 3;
+        min-height: 10em;
+        padding: 2em; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center; 
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #aaa; 
+    }
+    
+    .close-btn:hover {
+        color: #333;
+    }
+    
+    .popup-content input[type="text"] {
+        width: calc(100% - 2em); 
+        padding: 0.5em;
+        margin: 1em 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+    
+    .popup-content button {
+        background: #ca6fc7; 
+        color: white;
+        border: none;
+        padding: 0.75em 1.5em;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    .popup-content button:hover {
+        background: #7a4681; 
+    }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.heading-popup{
+    margin-bottom: 1em;
+}
